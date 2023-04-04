@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ITCompany.models
+namespace ITCompanyApplication.models
 {
     internal class Employee
     {
@@ -15,6 +15,11 @@ namespace ITCompany.models
         {
             Name = name;
             Salary = salary;
+        }
+
+        public string GetEmployeeInfo()
+        {
+            return $"Имя: {Name}; З/п: {Salary}";
         }
     }
 }

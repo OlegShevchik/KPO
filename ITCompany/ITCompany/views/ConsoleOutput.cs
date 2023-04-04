@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ITCompany.views
+namespace ITCompanyApplication.views
 {
     internal static class ConsoleOutput
     {

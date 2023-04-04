@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ITCompany.models
+namespace ITCompanyApplication.models
 {
     internal static class InfoAboutITCompany
     {
