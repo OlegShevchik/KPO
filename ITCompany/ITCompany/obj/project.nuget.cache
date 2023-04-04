@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "PCycT+J3xDlFZE74Sxt8QtVn+d3QNOAqwbs7H6ZxI9JVEPqRiFSm8hlXyat4To9gTBrl+WIPdJLZiKDDTDA4YA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\dadal\\OneDrive\\Desktop\\Лабы 2ой курс\\Второй семестр\\КПО\\Labs\\KPO\\ITCompany\\ITCompany\\ITCompany.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dadal\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.15\\microsoft.windowsdesktop.app.ref.6.0.15.nupkg.sha512",
+    "C:\\Users\\dadal\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.15\\microsoft.netcore.app.ref.6.0.15.nupkg.sha512",
+    "C:\\Users\\dadal\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.15\\microsoft.aspnetcore.app.ref.6.0.15.nupkg.sha512",
+    "C:\\Users\\dadal\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.15\\microsoft.netcore.app.host.win-x64.6.0.15.nupkg.sha512"
+  ],
+  "logs": []
+}
