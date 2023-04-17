@@ -10,6 +10,22 @@ namespace lab1.models
     {
         public string? Name;
         public List<Employee> Employees = new List<Employee>();
+
+        public ITCompany()
+        {
+            Name = "Google";
+        }
+
+        public ITCompany(string? name)
+        {
+            Name = name;
+        }
+
+        public ITCompany(ITCompany other)
+        {
+            Name = other.Name;
+            Employees = other.Employees;
+        }
         
         public void AddEmployee(string name, decimal salary)
         {
