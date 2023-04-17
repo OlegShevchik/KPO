@@ -1,11 +1,11 @@
-﻿using lab1.models;
+﻿using ITCompanies.models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace lab1.controllers
+namespace ITCompanies.controllers
 {
     internal static class UserInputController
     {
@@ -26,6 +26,14 @@ namespace lab1.controllers
                 }
             }
             throw new ArgumentException("Такой компании нет в списке!");
+        }
+
+        public static void IsEmployeeTypeCorrect(string employeeType)
+        {
+            if (employeeType != "программист" && employeeType != "менеджер" && employeeType != "тестировщик")
+            {
+                throw new ArgumentException("Неверный тип сотрудника!");
+            }
         }
     }
 }

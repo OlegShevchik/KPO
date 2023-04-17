@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace lab1.models
+namespace ITCompanies.models
 {
     internal class ITCompany
     {
@@ -28,9 +28,8 @@ namespace lab1.models
             Employees = other.Employees;
         }
         
-        public void AddEmployee(string name, decimal salary)
+        public void AddEmployee(Employee employee)
         {
-            Employee employee = new Employee(name, salary);
             Employees.Add(employee);
         }
 

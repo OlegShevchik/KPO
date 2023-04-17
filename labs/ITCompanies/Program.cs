@@ -1,6 +1,7 @@
-﻿using lab1.models;
-using lab1.views;
-using lab1.controllers;
+﻿using ITCompanies.models;
+using ITCompanies.views;
+using ITCompanies.controllers;
+using ITCompanies.models.employeesTypes;
 
 
 var companies = new List<ITCompany>();
@@ -16,8 +17,7 @@ while (true)
         case "1":
             {
                 var newCompanyInfo = Menu.CreateNewCompany();
-                ITCompany newCompany = new ITCompany();
-                newCompany.Name = newCompanyInfo["Name"];
+                ITCompany newCompany = new ITCompany(newCompanyInfo["Name"]);
                 companies.Add(newCompany);
                 Menu.ShowSuccess("Компания создана!\n");
                 break;
@@ -46,16 +46,41 @@ while (true)
                                 {
                                     try
                                     {
-                                        var employeeInfo = Menu.AddNewEmployee();
+                                        string? employeeType;
+                                        var employeeInfo = Menu.AddNewEmployee(out employeeType);
+                                        UserInputController.IsEmployeeTypeCorrect(employeeType);
+
+                                        Employee? newEmployee = null;
+
                                         var name = employeeInfo["Name"];
                                         var salary = decimal.Parse(employeeInfo["Salary"]);
                                         UserInputController.IsSalaryOutOfRange(salary);
 
-                                        currentCompany.AddEmployee(name, salary);
+                                        if (employeeType == "программист")
+                                        {
+                                            var level = employeeInfo["Level"];
+                                            var field = employeeInfo["Field"];
+
+                                            newEmployee = new Programmer(name, salary, employeeType, level, field);
+                                        }
+                                        else if (employeeType == "менеджер")
+                                        {
+                                            var type = employeeInfo["Type"];
+
+                                            newEmployee = new Manager(name, salary, employeeType, type);
+                                        }
+                                        else if (employeeType == "тестировщик")
+                                        {
+                                            var field = employeeInfo["Field"];
+
+                                            newEmployee = new QA(name, salary, employeeType, field);
+                                        }
+
+                                        currentCompany.AddEmployee(newEmployee);
 
                                         Menu.ShowSuccess("Сотрудник добавлен!");
                                     }
-                                    catch (ArgumentOutOfRangeException ex)
+                                    catch (Exception ex)
                                     {
                                         Menu.ShowError(ex.Message);
                                     }
