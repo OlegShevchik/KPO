@@ -8,15 +8,16 @@ namespace lab1.models
 {
     internal class ITCompany
     {
-        public string? Name;
-        public List<Employee> Employees = new List<Employee>();
+        public string? Name { get; private set; }
+        public List<Employee> Employees { get; private set; }
 
         public ITCompany()
         {
             Name = "Google";
+            Employees = new List<Employee>();
         }
 
-        public ITCompany(string? name)
+        public ITCompany(string? name) : this()
         {
             Name = name;
         }
@@ -29,10 +30,7 @@ namespace lab1.models
         
         public void AddEmployee(string name, decimal salary)
         {
-            Employee employee = new Employee();
-            employee.Name = name;
-            employee.Salary = salary;
-
+            Employee employee = new Employee(name, salary);
             Employees.Add(employee);
         }
 

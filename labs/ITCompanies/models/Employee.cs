@@ -8,8 +8,8 @@ namespace lab1.models
 {
     internal class Employee : IComparable<Employee>
     {
-        public string? Name;
-        public decimal Salary;
+        public string? Name { get; private set; }
+        public decimal Salary { get; private set; }
 
         public Employee()
         {
