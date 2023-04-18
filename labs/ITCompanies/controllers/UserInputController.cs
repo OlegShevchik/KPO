@@ -15,6 +15,17 @@ namespace ITCompanies.controllers
             return true;
         }
 
+        public static void IsCompanyExist(string? name, ref List<ITCompany> companies)
+        {
+            foreach (var c in companies)
+            {
+                if (c.Name == name)
+                {
+                    throw new ArgumentException("Компания с таким названием уже есть в списке компаний!");
+                }
+            }
+        }
+
         public static void IsCompanyExist(string? name, ref List<ITCompany> companies, out ITCompany company)
         {
             foreach (var c in companies)

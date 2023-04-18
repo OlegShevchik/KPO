@@ -17,9 +17,9 @@ namespace ITCompanies.models.employeesTypes
             Type = type;
         }
 
-        public new string GetEmployeeInfo()
+        public override string GetEmployeeInfo()
         {
-            return base.GetEmployeeInfo() + $"Тип: {Type}";
+            return $"Имя: {Name}; Зарплата: {Salary} $; Тип сотрудника: {EmployeeType}; Тип: {Type}";
         }
     }
 }

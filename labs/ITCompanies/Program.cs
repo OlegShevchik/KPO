@@ -14,16 +14,27 @@ while (true)
 
     switch (userAction)
     {
-        case "1":
+        case "1":  // Создание новой компании
             {
-                var newCompanyInfo = Menu.CreateNewCompany();
-                ITCompany newCompany = new ITCompany(newCompanyInfo["Name"]);
-                companies.Add(newCompany);
-                Menu.ShowSuccess("Компания создана!\n");
+                try
+                {
+                    var newCompanyInfo = Menu.CreateNewCompany();
+
+                    ITCompany temp;
+                    UserInputController.IsCompanyExist(newCompanyInfo["Name"], ref companies);
+
+                    ITCompany newCompany = new ITCompany(newCompanyInfo["Name"]);
+                    companies.Add(newCompany);
+                    Menu.ShowSuccess("Компания создана!\n");
+                }
+                catch (Exception ex)
+                {
+                    Menu.ShowError(ex.Message);
+                }
                 break;
             }
 
-        case "2":
+        case "2":  // Обращение к уже существующей компании (если имеется)
             {
                 var currentName = Menu.GetCurrentCompany();
 
@@ -42,19 +53,19 @@ while (true)
 
                         switch (userAction)
                         {
-                            case "1":
+                            case "1":  // Добавление сотрудника
                                 {
                                     try
                                     {
                                         string? employeeType;
                                         var employeeInfo = Menu.AddNewEmployee(out employeeType);
-                                        UserInputController.IsEmployeeTypeCorrect(employeeType);
+                                        UserInputController.IsEmployeeTypeCorrect(employeeType);  // Вызовет исключение, если тип некорректный
 
                                         Employee? newEmployee = null;
 
                                         var name = employeeInfo["Name"];
                                         var salary = decimal.Parse(employeeInfo["Salary"]);
-                                        UserInputController.IsSalaryOutOfRange(salary);
+                                        UserInputController.IsSalaryOutOfRange(salary);  // Вызовет исключение, если зарплата отрицательная
 
                                         if (employeeType == "программист")
                                         {
@@ -87,30 +98,30 @@ while (true)
                                     break;
                                 }
 
-                            case "2":
+                            case "2":  // Вывод информации о сотрудниках
                                 {
                                     Menu.ShowEmployeesInfo(currentCompany);
                                     break;
                                 }
 
-                            case "3":
+                            case "3":  // Вывод общего фонда зарплаты
                                 {
                                     Menu.ShowGeneralPayroll(currentCompany);
                                     break;
                                 }
-                            case "4":
+                            case "4":  // Сотрудник с максимальной зарплатой
                                 {
                                     Menu.ShowMaxSalaryEmployee(currentCompany);
                                     break;
                                 }
 
-                            case "5":
+                            case "5":  // Сотрудник с минимальной зарплатой
                                 {
                                     Menu.ShowMinSalaryEmployee(currentCompany);
                                     break;
                                 }
 
-                            case "6":
+                            case "6":  // Выход из подменю
                                 {
                                     continueAddMenu = false;
                                     break;
@@ -125,7 +136,7 @@ while (true)
                 break;
             }
 
-        case "3":
+        case "3":  // Выход из программы
             {
                 Environment.Exit(0);
                 break;

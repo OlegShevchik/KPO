@@ -90,11 +90,19 @@ namespace ITCompanies.views
         public static void ShowEmployeesInfo(ITCompany company)
         {
             Console.WriteLine("Информация о сотрудниках компании: ");
-            foreach (var employee in company.Employees)
+
+            if (company.Employees.Count == 0)
             {
-                if (employee.EmployeeType == "программист") Console.WriteLine(((Programmer)employee).GetEmployeeInfo());
-                else if (employee.EmployeeType == "менеджер") Console.WriteLine(((Manager)employee).GetEmployeeInfo());
-                else if (employee.EmployeeType == "тестировщик") Console.WriteLine(((QA)employee).GetEmployeeInfo());
+                Console.WriteLine("В данной компании нет сотрудников!");
+            }
+            else
+            {
+                foreach (var employee in company.Employees)
+                {
+                    if (employee.EmployeeType == "программист") Console.WriteLine(((Programmer)employee).GetEmployeeInfo());
+                    else if (employee.EmployeeType == "менеджер") Console.WriteLine(((Manager)employee).GetEmployeeInfo());
+                    else if (employee.EmployeeType == "тестировщик") Console.WriteLine(((QA)employee).GetEmployeeInfo());
+                }
             }
             Console.WriteLine();
         }
@@ -114,7 +122,7 @@ namespace ITCompanies.views
                 if (maxSalaryEmployee.EmployeeType == "программист") Console.Write(((Programmer)maxSalaryEmployee).GetEmployeeInfo());
                 else if (maxSalaryEmployee.EmployeeType == "менеджер") Console.Write(((Manager)maxSalaryEmployee).GetEmployeeInfo());
                 else if (maxSalaryEmployee.EmployeeType == "тестировщик") Console.Write(((QA)maxSalaryEmployee).GetEmployeeInfo());
-                Console.WriteLine();
+                Console.WriteLine("\n");
             }
             else Console.WriteLine($"Невозможно найти такого сотрудника!\n");
 
@@ -130,7 +138,7 @@ namespace ITCompanies.views
                 if (minSalaryEmployee.EmployeeType == "программист") Console.Write(((Programmer)minSalaryEmployee).GetEmployeeInfo());
                 else if (minSalaryEmployee.EmployeeType == "менеджер") Console.Write(((Manager)minSalaryEmployee).GetEmployeeInfo());
                 else if (minSalaryEmployee.EmployeeType == "тестировщик") Console.Write(((QA)minSalaryEmployee).GetEmployeeInfo());
-                Console.WriteLine();
+                Console.WriteLine("\n");
             }
             else Console.WriteLine($"Невозможно найти такого сотрудника!\n");
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITCompanies.models
 {
-    internal class Employee : IComparable<Employee>
+    internal abstract class Employee : IComparable<Employee>
     {
         public string? Name { get; private set; }
         public decimal Salary { get; private set; }
@@ -38,9 +38,6 @@ namespace ITCompanies.models
             return Salary.CompareTo(other?.Salary);
         }
 
-        public string GetEmployeeInfo()
-        {
-            return $"Имя: {Name}; Зарплата: {Salary} $; Тип сотрудника: {EmployeeType};";
-        }
+        public abstract string GetEmployeeInfo();
     }
 }

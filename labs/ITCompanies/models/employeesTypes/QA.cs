@@ -16,9 +16,9 @@ namespace ITCompanies.models.employeesTypes
             Field = field;
         }
 
-        public new string GetEmployeeInfo()
+        public override string GetEmployeeInfo()
         {
-            return base.GetEmployeeInfo() + $"Область: {Field}";
+            return $"Имя: {Name}; Зарплата: {Salary} $; Тип сотрудника: {EmployeeType}; Область: {Field}";
         }
     }
 }
