@@ -12,7 +12,7 @@ namespace ITCompanies.controllers
         public static bool IsSalaryOutOfRange(decimal salary)
         {
             if (salary < 0) throw new ArgumentOutOfRangeException("Значение не может быть отрицательным!");
-            return true;
+            return false;
         }
 
         public static void IsCompanyExist(string? name, ref List<ITCompany> companies)
