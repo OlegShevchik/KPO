@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5dyuXP0FAZ7D5CLqtFTvV/2poqvT3jzAVyvI6wgJdTO3uKoEg9veiFC5UpFz9SwmIAn7r2tHhY6jqKeevt49Tw==",
+  "dgSpecHash": "K6x6SjM8XN5wf8+7AdYx/x1mhKmDzU0TiEWNCNWn0kzKtKUqme5wmdxCJMm7/6ZJin8PruYKeZLWbYDr9BkZTw==",
   "success": true,
-  "projectFilePath": "D:\\Лабы 2ой курс\\Второй семестр\\КПО\\Лаба 0\\KPO\\labs\\ITCompanies\\ITCompanies.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\dadal\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.15\\microsoft.windowsdesktop.app.ref.6.0.15.nupkg.sha512",
-    "C:\\Users\\dadal\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.15\\microsoft.netcore.app.ref.6.0.15.nupkg.sha512",
-    "C:\\Users\\dadal\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.15\\microsoft.aspnetcore.app.ref.6.0.15.nupkg.sha512",
-    "C:\\Users\\dadal\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.15\\microsoft.netcore.app.host.win-x64.6.0.15.nupkg.sha512"
-  ],
+  "projectFilePath": "D:\\Лабы 2ой курс\\Второй семестр\\KPO\\Лаба 0\\KPO\\labs\\ITCompanies\\ITCompanies.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

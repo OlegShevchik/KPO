@@ -4,7 +4,7 @@ using ITCompanies.controllers;
 using ITCompanies.models.employeesTypes;
 
 
-var companies = new List<ITCompany>();
+var companies = (new CompanyGenerator()).CreateInitCompaniesList();
 ITCompany? currentCompany = null;
 
 while (true)
